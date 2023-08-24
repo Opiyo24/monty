@@ -5,13 +5,18 @@
 */
 int cleaner(int error_code, ...)
 {
-	va_list args;
-	va_start(args, error_code);
+	va_list ag;
+	char *op;
+	int line_number;
+
+	va_start(ag, error_code);
+	line_number = va_arg(ag, unsigned int);
 
 	switch (error_code)
 	{
 		case 1:
-			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, pop);
+			op = va_arg(ag, char *);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, op);
 			break;
 		case 2:
 			fprintf(stderr, "'%d: can't pint, stack empty\n", line_number);
@@ -31,6 +36,6 @@ int cleaner(int error_code, ...)
 		default:
 			break;
 	}
-	va_end(args);
+	va_end(ag);
 	exit(EXIT_FAILURE);
 }

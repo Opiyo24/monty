@@ -11,7 +11,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 		cleaner(3, line_number);
 	temp = *stack;
-	*stack = temp->nmext;
+	*stack = temp->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
 	free(temp);

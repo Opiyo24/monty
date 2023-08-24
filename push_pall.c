@@ -9,55 +9,22 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	stack_t *new_node;
-	int i;
+	stack_t *head;
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
+		exit(EXIT_FAILURE);
+	if (*head == NULL)
 	{
-		cleaner(4);
+		head = new_node;
 		return;
 	}
-
-	if (op_toks[1] == NULL)
-	{
-		cleaner(5, line_number);
-		return;
-	}
-	for (i = 0; op_toks[1][i]; i++)
-	{
-		if (op_toks[1][i] == '-' && i == 0)
-			continue;
-		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
-		{
-			cleaner(5, line_number);
-			return;
-		}
-	}
-	new_node->n = atoi(op_toks[1]);
-
-	if (check_mode(*stack) == STACK)
-	{
-		temp = (*stack)->next;
-		new_node->prev = *stack;
-		new_node->next = temp;
-
-		if (temp)
-		{
-			temp->prev = new_node;
-		}
-		(*stack)->next = new_node;
-	}
-	else
-	{
-		temp = *stack;
-		while (temp->next)
-		{
-			temp = temp->next;
-		}
-		new_node->prev = temp;
-		new_node->next = NULL;
-		temp->next = new_node;
-	}
+	temp = head;
+	head = new_node;
+	head->next = temp;
+	temp->prev = head;
+	(void)(line_number);
+	(void)(*stack);
 }
 /**
  * pall - displays the values of a stack
@@ -74,6 +41,6 @@ while (temp)
 		temp = temp->next;
 	}
 	cleaner(6);
-	void (line_number);
+	(void)(line_number);
 	return;
 }

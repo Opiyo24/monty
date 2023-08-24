@@ -10,7 +10,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		cleaner(1, line_number, op);
+		cleaner(1);
 		return;
 	}
 
@@ -22,4 +22,5 @@ void swap(stack_t **stack, unsigned int line_number)
 	temp->next = (*stack)->next;
 	temp->prev = *stack;
 	(*stack)->next = temp;
+	(void)(line_number);
 }
