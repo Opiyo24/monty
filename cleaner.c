@@ -33,6 +33,9 @@ int cleaner(int error_code, ...)
 		case 6:
 			fprintf(stderr, "Stack underflow\n");
 			break;
+		case 9:
+			fprintf(stderr, "Error: can't open file %s\n", va_arg(ag, char *));
+			break;
 		default:
 			break;
 	}

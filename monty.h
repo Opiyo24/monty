@@ -50,5 +50,7 @@ void add(stack_t **stack, unsigned int line_number);
 
 int check_mode(stack_t *stack);
 int cleaner(int error_code, ...);
+void open_file(char *file_name);
+void free_nodes(void);
 
 #endif
