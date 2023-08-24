@@ -10,8 +10,6 @@
 #define QUEUE 1
 #define DELIMS " \n\t\a\b"
 
-char **op_toks = NULL;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
