@@ -2,7 +2,7 @@
 #define MONTY_H_
 
 #include <stdio.h>
-#include <stdlib/h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #define STACK 0

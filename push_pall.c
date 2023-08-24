@@ -21,7 +21,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (op_toks[1] == NULL)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		return(EXIT_FAILURE):
+		return(EXIT_FAILURE);
 	}
 	for (i = 0; op_toks[1][i]; i++)
 	{
@@ -45,7 +45,7 @@ void push(stack_t **stack, unsigned int line_number)
 		{
 			temp->prev = new_node;
 		}
-		(*stack)->next - new_node;
+		(*stack)->next = new_node;
 	}
 	else
 	{
@@ -68,7 +68,7 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = (*stack)->next;
 
-	whle (temp)
+while (temp)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
