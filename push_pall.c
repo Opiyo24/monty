@@ -27,7 +27,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if (op_toks[1][i] == '-' && i == 0)
 			continue;
-		if (op_tok[1][i] < '0' || op_toks[1][i] > '9')
+		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			return;
