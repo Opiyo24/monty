@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int i;
 
-	new_node = (stack_t)malloc(sizeof(stack_t));
+	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -74,5 +74,5 @@ while (temp)
 		temp = temp->next;
 	}
 	fprintf(stderr, "Stack underflow\n");
-	exit(EXIT_FAILURE);
+	void (line_number);
 }
