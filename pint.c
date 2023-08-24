@@ -4,7 +4,7 @@
  * @stack: tope node of t\stack
  * @line_number: line number
 */
-void pint(stack_t **stack, unsigned in line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	if ((*stack)->next == NULL)
 	{

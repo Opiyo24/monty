@@ -4,7 +4,7 @@
  * @satck: pointer to first node in stack or queue
  * @line_number: line number of opcode
 */
-void nop(stac_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;

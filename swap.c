@@ -11,7 +11,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		cleaner(1, line_number, op);
-		return(EXIT_FAILURE);
+		return;
 	}
 
 	temp = (*stack)->next->next;

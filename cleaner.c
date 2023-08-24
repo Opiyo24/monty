@@ -3,7 +3,7 @@
  * cleaner - error handling function
  * @code: error code to handle
 */
-int cleaner(int error_code)
+int cleaner(int error_code, ...)
 {
 	va_list args;
 	va_start(args, error_code);
@@ -11,7 +11,7 @@ int cleaner(int error_code)
 	switch (error_code)
 	{
 		case 1:
-			fprint(stderr, "L%d: can't %s, stack too short\n", line_number, op);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, pop);
 			break;
 		case 2:
 			fprintf(stderr, "'%d: can't pint, stack empty\n", line_number);
@@ -32,5 +32,5 @@ int cleaner(int error_code)
 			break;
 	}
 	va_end(args);
-	exit(EXIT_FAILURE)
+	exit(EXIT_FAILURE);
 }
