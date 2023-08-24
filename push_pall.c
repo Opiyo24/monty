@@ -59,3 +59,20 @@ void push(stack_t **stack, unsigned int line_number)
 		temp->next = new_node;
 	}
 }
+/**
+ * pall - displays the values of a stack
+ * @stack: a stack
+ * @line_number: line number
+*/
+void pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = (*stack)->next;
+
+	whle (temp)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
+	fprintf(stderr, "Stack uderflow\n");
+	return;
+}
