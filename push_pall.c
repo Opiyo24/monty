@@ -9,7 +9,6 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	stack_t *new_node;
-	stack_t *head;
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
@@ -17,14 +16,15 @@ void push(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		new_node->next = NULL;
-		new_nde->prev = NULL;
+		new_node->prev = NULL;
 		*stack = new_node;
 	}
 	temp = *stack;
 	new_node->next = temp;
 	new_node->prev = NULL;
 	temp->prev = new_node;
-	*stack = new_node
+	*stack = new_node;
+	(void)(line_number);
 }
 /**
  * pall - displays the values of a stack
