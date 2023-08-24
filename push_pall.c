@@ -14,17 +14,17 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		exit(EXIT_FAILURE);
-	if (*head == NULL)
+	if (*stack == NULL)
 	{
-		head = new_node;
-		return;
+		new_node->next = NULL;
+		new_nde->prev = NULL;
+		*stack = new_node;
 	}
-	temp = head;
-	head = new_node;
-	head->next = temp;
-	temp->prev = head;
-	(void)(line_number);
-	(void)(*stack);
+	temp = *stack;
+	new_node->next = temp;
+	new_node->prev = NULL;
+	temp->prev = new_node;
+	*stack = new_node
 }
 /**
  * pall - displays the values of a stack
