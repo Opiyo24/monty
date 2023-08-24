@@ -10,8 +10,8 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL|| *stack == NULL || (*stack)->next == NULL)
 	{
-		fprint(stderr, "L%d: can't %s, stack too short\n", line_number, op);
-		return(EXIT_FAILURE);
+		cleaner(1, line_number, op);
+		return;
 	}
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n + (*stack)->prev->n;

@@ -10,7 +10,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't %s, stack too short\n", line_number, op);
+		cleaner(1, line_number, op);
 		return(EXIT_FAILURE);
 	}
 

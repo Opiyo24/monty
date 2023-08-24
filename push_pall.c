@@ -14,13 +14,13 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
+		cleaner(4);
 		return;
 	}
 
 	if (op_toks[1] == NULL)
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		cleaner(5, line_number);
 		return;
 	}
 	for (i = 0; op_toks[1][i]; i++)
@@ -29,7 +29,7 @@ void push(stack_t **stack, unsigned int line_number)
 			continue;
 		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
 		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			cleaner(5, line_number);
 			return;
 		}
 	}
@@ -73,6 +73,7 @@ while (temp)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
-	fprintf(stderr, "Stack underflow\n");
+	cleaner(6);
 	void (line_number);
+	return;
 }

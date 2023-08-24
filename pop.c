@@ -10,8 +10,8 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		return(EXIT_FAILURE);/*return;*/
+		cleaner(3,line_number);
+		return;
 	}
 
 	next = (*stack)->next->next;
