@@ -6,19 +6,13 @@
 */
 void pop(stack_t **stack, unsigned int line_number)
 {
-	stack->next = NULL;
+	stack_t *temp;
 
-	if ((*stack)->next == NULL)
-	{
-		cleaner(3,line_number);
-		return;
-	}
-
-	stack->next = (*stack)->next->next;
-	free((*stack)->next);
-	if (stack->next)
-	{
-		next->prev = *stack;
-	}
-	(*stack)->next = next;
+	if (stack == NULL || *stack == NULL)
+		cleaner(3, line_number);
+	temp = *stack;
+	*stack = temp->nmext;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(temp);
 }
